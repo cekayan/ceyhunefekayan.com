@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Avatar from "../components/Avatar";
-import Layout from "../components/Layout";
 import { ChevronDoubleDownIcon } from "@heroicons/react/outline";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import { useEffect } from "react";
+import Education from "./education";
 
 const Home: NextPage = () => {
+  const { width, height } = useWindowDimensions();
+  useEffect(() => {
+    console.log(height);
+  }, [height]);
   return (
     <>
       <Head>
@@ -16,21 +22,16 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <Navbar />
-        <Avatar />
-        <ChevronDoubleDownIcon className="w-6 h-6" />
-      </Layout>
-      {/* <Layout>
-        <p>
-          Ullamco laborum duis duis anim esse anim cillum ex exercitation culpa.
-          Officia ut magna ipsum laborum in sint consequat ipsum mollit amet
-          officia nulla veniam. Fugiat et minim reprehenderit irure ex quis
-          incididunt enim reprehenderit irure. Cupidatat voluptate nulla minim
-          reprehenderit veniam magna. Voluptate aliqua laborum id pariatur
-          laboris consectetur anim amet. Ad dolor ea eiusmod nisi est.
-        </p>
-      </Layout> */}
+      <main className="absolute h-full w-full bg-slate-900 text-white flex-1 overflow-auto">
+        <div className="h-full flex flex-col justify-center">
+          <Avatar />
+          <div className="absolute bottom-4 w-full flex justify-center">
+            <ChevronDoubleDownIcon className="w-6 h-6" />
+          </div>
+        </div>
+        <div className="h-full"></div>
+        <div className="h-full"></div>
+      </main>
     </>
   );
 };
