@@ -29,12 +29,15 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <ul>
+    <ul className="flex gap-x-5">
       {contactInfo.map((item) => {
         return (
           <li key={item.name}>
-            <a href={item.href}>
-              <item.icon className="w-6 h-6" />
+            <a
+              href={item.href}
+              className="focus:text-sky-300 hover:text-sky-300"
+            >
+              <item.icon className="h-8 w-8" />
             </a>
           </li>
         );

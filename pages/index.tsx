@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Avatar from "../components/Avatar";
+import Bio from "../components/Bio";
 import { ChevronDoubleDownIcon } from "@heroicons/react/outline";
 import Header from "../components/Header";
 import EducationSection from "../components/Education";
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="absolute h-full w-full bg-slate-900 text-white flex-1 overflow-auto">
         <div className="h-full flex flex-col justify-center">
-          <Avatar />
+          <Bio />
           <div className="absolute bottom-4 w-full flex justify-center">
             <ChevronDoubleDownIcon className="w-6 h-6" />
           </div>
