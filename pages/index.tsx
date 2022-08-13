@@ -3,17 +3,11 @@ import Head from "next/head";
 import Avatar from "../components/Avatar";
 import { ChevronDoubleDownIcon } from "@heroicons/react/outline";
 import Header from "../components/Header";
-import useWindowDimensions from "../hooks/useWindowDimensions";
-import { useEffect } from "react";
 import EducationSection from "../components/Education";
 import Publications from "../components/Publications";
 import Research from "../components/Research";
 
 const Home: NextPage = () => {
-  const { width, height } = useWindowDimensions();
-  useEffect(() => {
-    console.log(height);
-  }, [height]);
   return (
     <>
       <Head>
