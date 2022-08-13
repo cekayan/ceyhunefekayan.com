@@ -5,7 +5,9 @@ import { ChevronDoubleDownIcon } from "@heroicons/react/outline";
 import Header from "../components/Header";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { useEffect } from "react";
-import Education from "./education";
+import EducationSection from "../components/Education";
+import Publications from "../components/Publications";
+import Research from "../components/Research";
 
 const Home: NextPage = () => {
   const { width, height } = useWindowDimensions();
@@ -29,8 +31,15 @@ const Home: NextPage = () => {
             <ChevronDoubleDownIcon className="w-6 h-6" />
           </div>
         </div>
-        <div className="h-full"></div>
-        <div className="h-full"></div>
+        <div className="h-full">
+          <EducationSection />
+        </div>
+        <div className="h-full">
+          <Publications />
+        </div>
+        <div className="h-full">
+          <Research />
+        </div>
       </main>
     </>
   );

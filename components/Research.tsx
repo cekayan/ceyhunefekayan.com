@@ -1,7 +1,9 @@
+import Heading1 from "./Heading1";
+
 const Research = () => {
   return (
     <section>
-      <h1>Research</h1>
+      <Heading1>Research</Heading1>
     </section>
   );
 };

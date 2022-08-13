@@ -1,7 +1,9 @@
+import Heading1 from "./Heading1";
+
 const Publications = () => {
   return (
     <section>
-      <h1>Publications</h1>
+      <Heading1>Publications</Heading1>
       <ul>
         <li>Very Good Publication</li>
         <li>Very Good Publication</li>
