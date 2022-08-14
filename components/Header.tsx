@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="fixed z-50 top-0 bg-slate-700 h-20 w-full dark:text-white">
+    <header className="fixed top-0 z-50 h-20 w-full bg-slate-700 dark:text-white">
       <ul>
         <li>
           <Link href="/#education">

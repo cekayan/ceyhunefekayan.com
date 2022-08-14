@@ -18,11 +18,11 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="absolute h-full w-full bg-slate-900 text-white flex-1 overflow-auto">
-        <div className="h-full flex flex-col justify-center">
+      <main className="absolute h-full w-full flex-1 overflow-auto bg-slate-900 text-white">
+        <div className="flex h-full flex-col justify-center">
           <Bio />
-          <div className="absolute bottom-4 w-full flex justify-center">
-            <ChevronDoubleDownIcon className="w-6 h-6" />
+          <div className="absolute bottom-4 flex w-full justify-center">
+            <ChevronDoubleDownIcon className="h-6 w-6" />
           </div>
         </div>
         <div className="min-h-full">

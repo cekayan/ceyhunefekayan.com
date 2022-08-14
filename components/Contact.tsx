@@ -35,7 +35,7 @@ const Contact = () => {
           <li key={item.name}>
             <a
               href={item.href}
-              className="focus-visible:text-sky-300 focus-visible:ring-slate-100 hover:text-sky-300"
+              className="hover:text-sky-300 focus-visible:text-sky-300 focus-visible:ring-slate-100"
             >
               <item.icon className="h-8 w-8" />
             </a>

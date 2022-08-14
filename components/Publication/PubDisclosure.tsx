@@ -15,7 +15,7 @@ const PubDisclosure = ({ abstract, links }: disclosureInfo) => {
         {({ open }) => (
           <>
             <div className="">
-              <Disclosure.Button className="w-full flex justify-between bg-slate-500 p-2 rounded-lg focus:outline-none focus-visible:ring focus-visible:ring-sky-300/75">
+              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-slate-500 p-2 focus:outline-none focus-visible:ring focus-visible:ring-sky-300/75">
                 <span className="">Show links and abstract</span>
                 <ChevronUpIcon
                   className={`${open ? "rotate-180" : ""} h-6 w-6`}

@@ -22,8 +22,8 @@ const Publications = () => {
   return (
     <section>
       <Heading1>Publications</Heading1>
-      <ul className="px-4 mb-8">
-        <li className="bg-slate-700 rounded-lg p-3">
+      <ul className="mb-8 px-4">
+        <li className="rounded-lg bg-slate-700 p-3">
           <PublicationItem
             title={publications[0].title}
             year={publications[0].year}

@@ -5,7 +5,7 @@ interface yearInfo {
 const PubYear = ({ year }: yearInfo) => {
   return (
     <p className="mb-2">
-      <span className="bg-sky-400/75 text-black rounded-xl p-1">{year}</span>
+      <span className="rounded-xl bg-sky-400/75 p-1 text-black">{year}</span>
     </p>
   );
 };
