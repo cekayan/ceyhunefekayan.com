@@ -6,7 +6,7 @@ interface authorsInfo {
 
 const PubAuthors = ({ authors }: authorsInfo): JSX.Element => {
   return (
-    <ul className="mb-2 flex flex-wrap gap-x-1 text-sm">
+    <ul className="mb-4 flex flex-wrap gap-x-1 text-sm">
       {authors.map(({ name }, idx) =>
         idx === authors.length - 1 ? (
           <li key={name}>{name}</li>
