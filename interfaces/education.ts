@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-interface EducationInfo {
+interface educationInfo {
   image: StaticImageData;
   altText: string;
   schoolTitle: string;
@@ -9,4 +9,4 @@ interface EducationInfo {
   endYear: string;
 }
 
-export default EducationInfo;
+export default educationInfo;

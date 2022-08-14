@@ -2,9 +2,9 @@ import Heading1 from "./Heading1";
 import EducationItem from "./EducationItem";
 import drexelIcon from "../public/school-icons/drexel.jpeg";
 import iztechIcon from "../public/school-icons/iztech.jpeg";
-import EducationInfo from "../interfaces/education";
+import educationInfo from "../interfaces/education";
 
-const educationList: EducationInfo[] = [
+const educationList: educationInfo[] = [
   {
     schoolTitle: "Drexel University",
     positionName: "PhD Student in Computer Woopsies",
@@ -27,7 +27,7 @@ const EducationSection = () => {
   return (
     <section>
       <Heading1>Education</Heading1>
-      <ul className="flex flex-col gap-y-4 px-2">
+      <ul className="flex flex-col gap-y-4 px-4">
         {educationList.map(
           ({
             schoolTitle,
@@ -38,7 +38,7 @@ const EducationSection = () => {
             endYear,
           }) => {
             return (
-              <li key={positionName} className="rounded-lg bg-slate-700">
+              <li key={positionName} className="">
                 <EducationItem
                   schoolTitle={schoolTitle}
                   positionName={positionName}

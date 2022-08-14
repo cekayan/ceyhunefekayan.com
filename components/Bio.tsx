@@ -13,6 +13,7 @@ const Bio = () => {
           layout="fill"
           src={profilePic}
           alt="Ceyhun Efe Kayan's profile picture"
+          priority
         />
       </div>
       <Title />

@@ -25,13 +25,13 @@ const Home: NextPage = () => {
             <ChevronDoubleDownIcon className="w-6 h-6" />
           </div>
         </div>
-        <div className="h-full">
+        <div className="min-h-full">
           <EducationSection />
         </div>
-        <div className="h-full">
+        <div className="min-h-full">
           <Publications />
         </div>
-        <div className="h-full">
+        <div className="min-h-full">
           <Research />
         </div>
       </main>

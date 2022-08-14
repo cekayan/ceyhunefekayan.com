@@ -1,4 +1,4 @@
-import EducationInfo from "../interfaces/education";
+import educationInfo from "../interfaces/education";
 import EducationDate from "./EducationDate";
 import EducationIcon from "./EducationIcon";
 import EducationSchoolPosition from "./EducationSchoolPosition";
@@ -11,7 +11,7 @@ const EducationItem = ({
   positionName,
   startYear,
   endYear,
-}: EducationInfo) => {
+}: educationInfo) => {
   return (
     <section className="flex rounded-md py-3 gap-x-2">
       <div className="flex p-2">
