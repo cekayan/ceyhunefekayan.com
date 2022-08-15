@@ -4,7 +4,7 @@ interface EducationPosition {
 
 const EducationSchoolPosition = ({ positionName }: EducationPosition) => {
   return (
-    <p className="text-base font-normal text-black dark:text-white">
+    <p className="text-base font-normal text-black dark:text-white lg:text-lg">
       {positionName}
     </p>
   );

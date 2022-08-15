@@ -2,13 +2,13 @@ const Title = () => {
   return (
     <div className="text-center">
       <section>
-        <h2 className="text-2xl font-bold">Ceyhun Efe Kayan</h2>
+        <h1 className="text-2xl font-bold lg:text-4xl">Ceyhun Efe Kayan</h1>
       </section>
       <section>
-        <h3 className="text-slate-400">PhD Student</h3>
+        <h3 className="text-slate-400 lg:text-xl">PhD Student</h3>
       </section>
       <section>
-        <h3>Drexel University</h3>
+        <h3 className="lg:text-xl">Drexel University</h3>
       </section>
     </div>
   );

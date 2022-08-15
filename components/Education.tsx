@@ -27,7 +27,7 @@ const EducationSection = () => {
   return (
     <section>
       <Heading1>Education</Heading1>
-      <ul className="flex flex-col gap-y-4 px-4">
+      <ul className="flex flex-col items-center gap-y-4 px-4">
         {educationList.map(
           ({
             schoolTitle,
@@ -38,7 +38,10 @@ const EducationSection = () => {
             endYear,
           }) => {
             return (
-              <li key={positionName} className="">
+              <li
+                key={positionName}
+                className="w-full ring ring-sky-300 sm:max-w-lg"
+              >
                 <EducationItem
                   schoolTitle={schoolTitle}
                   positionName={positionName}

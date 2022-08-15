@@ -16,9 +16,11 @@ const PubDisclosure = ({ abstract, links }: disclosureInfo) => {
           <>
             <div className="">
               <Disclosure.Button className="flex w-full justify-between rounded-lg bg-slate-500 p-2 focus:outline-none focus-visible:ring focus-visible:ring-sky-300/75">
-                <span className="">Show links and abstract</span>
+                <span className="lg:text-lg">Show links and abstract</span>
                 <ChevronUpIcon
-                  className={`${open ? "rotate-180" : ""} h-6 w-6`}
+                  className={`${
+                    open ? "rotate-180" : ""
+                  } h-6 w-6 lg:h-8 lg:w-8`}
                 />
               </Disclosure.Button>
             </div>
@@ -32,7 +34,7 @@ const PubDisclosure = ({ abstract, links }: disclosureInfo) => {
             >
               <Disclosure.Panel className="my-4">
                 <PubLinks allLinks={links} />
-                <p>{abstract}</p>
+                <p className="p-2 text-justify lg:text-lg">{abstract}</p>
               </Disclosure.Panel>
             </Transition>
           </>

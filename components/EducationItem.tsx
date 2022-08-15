@@ -13,12 +13,12 @@ const EducationItem = ({
   endYear,
 }: educationInfo) => {
   return (
-    <section className="flex gap-x-2 rounded-md py-3">
+    <section className="flex items-center gap-x-2 rounded-md py-3">
       <div className="flex p-2">
         <EducationIcon image={image} altText={altText} />
       </div>
       <div className="flex w-full flex-col ">
-        <div className="text-justify">
+        <div className="">
           <EducationSchoolTitle schoolTitle={schoolTitle} />
           <EducationSchoolPosition positionName={positionName} />
           <EducationDate startYear={startYear} endYear={endYear} />

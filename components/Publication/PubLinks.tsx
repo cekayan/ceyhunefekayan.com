@@ -7,7 +7,7 @@ interface propType {
 
 const PubLinks = (props: propType) => {
   return (
-    <ul className="mb-2">
+    <ul className="mb-2 lg:mb-4 lg:mt-6">
       {props.allLinks.map(({ name, href }) => (
         <li key={href + name}>
           <Button href={href} name={name} />

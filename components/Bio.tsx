@@ -5,7 +5,7 @@ import Contact from "./Contact";
 
 const Bio = () => {
   return (
-    <div className="flex flex-col items-center gap-y-4">
+    <div className="flex flex-col items-center gap-y-4 lg:gap-y-6">
       <div className="relative h-40 w-40 rounded-full shadow-md shadow-slate-200">
         <Image
           className="rounded-full"

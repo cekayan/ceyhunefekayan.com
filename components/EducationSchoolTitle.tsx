@@ -4,7 +4,7 @@ interface SchoolName {
 
 const EducationSchoolTitle = ({ schoolTitle }: SchoolName) => {
   return (
-    <h2 className="text-lg font-bold text-black dark:text-white">
+    <h2 className="text-lg font-bold text-black dark:text-white lg:text-2xl">
       {schoolTitle}
     </h2>
   );
