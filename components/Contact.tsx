@@ -37,7 +37,7 @@ const Contact = () => {
               href={item.href}
               className="hover:text-sky-300 focus-visible:text-sky-300 focus-visible:ring-slate-100"
             >
-              <item.icon className="h-8 w-8" />
+              <item.icon aria-label={item.name} className="h-8 w-8" />
             </a>
           </li>
         );

@@ -11,15 +11,15 @@ const educationList: educationInfo[] = [
     startYear: "2022",
     endYear: "current",
     image: drexelIcon,
-    altText: "haha funny image",
+    altText: "Logo of Drexel University",
   },
   {
     schoolTitle: "Izmir Institute of Technology",
-    positionName: "Undergrad in everything",
+    positionName: "BSc Electronics and Communications Engineering",
     startYear: "2018",
     endYear: "2022",
     image: iztechIcon,
-    altText: "haha more funny image lol xd",
+    altText: "Logo of Izmir Institute of Technology",
   },
 ];
 
