@@ -1,4 +1,4 @@
-import { FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { IconBaseProps } from "react-icons/lib";
 import { SiGooglescholar } from "react-icons/si";
 
@@ -24,6 +24,11 @@ const contactInfo = [
     name: "Google Scholar",
     href: "https://scholar.google.com/citations?user=dT5jOoUAAAAJ&hl=en&oi=ao",
     icon: (props: SocialIconProp) => <SiGooglescholar {...props} />,
+  },
+  {
+    name: "Linkedin",
+    href: "https://www.linkedin.com/in/ceyhunefekayan/",
+    icon: (props: SocialIconProp) => <FaLinkedin {...props} />,
   },
 ];
 

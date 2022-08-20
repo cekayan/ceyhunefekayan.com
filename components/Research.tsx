@@ -1,5 +1,11 @@
 import Heading1 from "./Heading1";
 
+const researchInterests = [
+  "Machine Learning",
+  "Artificial Intelligence",
+  "Computer Vision",
+];
+
 const Research = () => {
   return (
     <section>
@@ -19,9 +25,9 @@ const Research = () => {
       </div>
       <div className="mx-auto max-w-lg">
         <ul className="w-full list-disc px-6 lg:text-lg">
-          <li>Decerealization of cereals</li>
-          <li>finding the one and all Cthulhu</li>
-          <li>Looking for a sane person</li>
+          {researchInterests.map((interestItem) => (
+            <li key={interestItem}>{interestItem}</li>
+          ))}
         </ul>
       </div>
     </section>

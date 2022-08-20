@@ -20,7 +20,7 @@ const PublicationItem = ({
       <PubYear year={year} />
       <PubTitle title={title} />
       <PubAuthors authors={authors} />
-      <PubDisclosure abstract={abstract} links={links} />
+      <PubLinks allLinks={links} />
     </section>
   );
 };

@@ -3,9 +3,9 @@ interface EducationDateInfo {
   endYear: number | string;
 }
 
-const EducationDate = ({ startYear, endYear }: EducationDateInfo) => {
+const CardDate = ({ startYear, endYear }: EducationDateInfo) => {
   return (
-    <p className="text-base font-light text-gray-600 dark:text-gray-300 lg:text-lg">
+    <p className="text-base font-light text-gray-300 lg:text-lg">
       <span>{startYear}</span> -{" "}
       <span
         className={`${
@@ -18,4 +18,4 @@ const EducationDate = ({ startYear, endYear }: EducationDateInfo) => {
   );
 };
 
-export default EducationDate;
+export default CardDate;

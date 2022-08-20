@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import EducationSection from "../components/Education";
 import Publications from "../components/Publications";
 import Research from "../components/Research";
+import Experience from "../components/Experience";
 
 const Home: NextPage = () => {
   return (
@@ -27,6 +28,9 @@ const Home: NextPage = () => {
         </div>
         <div className="min-h-full">
           <EducationSection />
+        </div>
+        <div className="min-h-full">
+          <Experience />
         </div>
         <div className="min-h-full">
           <Publications />

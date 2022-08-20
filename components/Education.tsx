@@ -1,10 +1,10 @@
 import Heading1 from "./Heading1";
-import EducationItem from "./EducationItem";
-import drexelIcon from "../public/school-icons/drexel.jpeg";
-import iztechIcon from "../public/school-icons/iztech.jpeg";
-import educationInfo from "../interfaces/education";
+import Card from "./Card/Card";
+import drexelIcon from "../public/icons/drexel.png";
+import iztechIcon from "../public/icons/iztech.jpeg";
+import CardType from "../interfaces/education";
 
-const educationList: educationInfo[] = [
+const educationList: CardType[] = [
   {
     schoolTitle: "Drexel University",
     positionName: "PhD Student in Computer Woopsies",
@@ -38,17 +38,14 @@ const EducationSection = () => {
             endYear,
           }) => {
             return (
-              <li
-                key={positionName}
-                className="w-full ring ring-sky-300 sm:max-w-lg"
-              >
-                <EducationItem
-                  schoolTitle={schoolTitle}
-                  positionName={positionName}
+              <li key={positionName} className="w-full sm:max-w-lg">
+                <Card
+                  title={schoolTitle}
+                  content={positionName}
                   image={image}
                   altText={altText}
-                  startYear={startYear}
-                  endYear={endYear}
+                  startDate={startYear}
+                  endDate={endYear}
                 />
               </li>
             );
