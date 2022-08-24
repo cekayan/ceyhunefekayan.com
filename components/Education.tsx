@@ -7,7 +7,7 @@ import CardType from "../interfaces/education";
 const educationList: CardType[] = [
   {
     schoolTitle: "Drexel University",
-    positionName: "PhD Student in Computer Woopsies",
+    positionName: "PhD Student in Department of ECE",
     startYear: "2022",
     endYear: "current",
     image: drexelIcon,
