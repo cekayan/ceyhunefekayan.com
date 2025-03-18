@@ -1,10 +1,20 @@
 ---
 import SidebarLayout from "../layouts/sidebar-layout.astro";
 
-const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
+interface MarkdownPost {
+  url: string;
+  frontmatter: {
+    title: string;
+    description: string;
+  };
+}
+
+const posts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true })
+) as MarkdownPost[];
 const projects = Object.values(
   import.meta.glob("./projects/*.md", { eager: true })
-);
+) as MarkdownPost[];
 ---
 
 <SidebarLayout title="Ceyhun Efe Kayan">
@@ -53,7 +63,20 @@ const projects = Object.values(
     }
   </section>
 
-  <section class="experience">
+  <section class="education">
+    <h2><span class="icon">🎓</span> Education</h2>
+    <div class="education-item">
+      <div class="education-header">
+        <span class="date">2015 - 2019</span>
+        <h3>University Name - Degree in Field</h3>
+      </div>
+      <p class="education-description">
+        Brief description of studies or achievements.
+      </p>
+    </div>
+  </section>
+
+  <section class="work-experience">
     <h2><span class="icon">💼</span> Work Experience</h2>
     <div class="experience-item">
       <div class="experience-header">
@@ -78,7 +101,8 @@ const projects = Object.values(
 
   .post-item,
   .project-item,
-  .experience-item {
+  .experience-item,
+  .education-item {
     margin: 1.5rem 0;
   }
 
@@ -97,7 +121,8 @@ const projects = Object.values(
     color: #666;
   }
 
-  .experience-header {
+  .experience-header,
+  .education-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,5 +150,11 @@ const projects = Object.values(
     color: #888;
     font-style: italic;
     padding: 1rem 0;
+  }
+
+  .education-description {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
   }
 </style>
