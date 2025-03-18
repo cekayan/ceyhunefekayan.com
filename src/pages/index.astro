@@ -1,20 +1,5 @@
 ---
 import SidebarLayout from "../layouts/sidebar-layout.astro";
-
-interface MarkdownPost {
-  url: string;
-  frontmatter: {
-    title: string;
-    description: string;
-  };
-}
-
-const posts = Object.values(
-  import.meta.glob("./posts/*.md", { eager: true })
-) as MarkdownPost[];
-const projects = Object.values(
-  import.meta.glob("./projects/*.md", { eager: true })
-) as MarkdownPost[];
 ---
 
 <SidebarLayout title="Ceyhun Efe Kayan">
@@ -28,39 +13,38 @@ const projects = Object.values(
   </section>
 
   <section class="research-interests">
-    <h2><span class="icon">📡</span> Research Interests</h2>
-    {
-      posts.length > 0 ? (
-        posts.map((post) => (
-          <div class="post-item">
-            <a href={post.url} class="post-title">
-              {post.frontmatter.title}
-            </a>
-            <p class="post-description">{post.frontmatter.description}</p>
-          </div>
-        ))
-      ) : (
-        <p class="empty-message">No posts available yet. Check back soon!</p>
-      )
-    }
+    <h2><span class="icon">🔬</span> Research Interests</h2>
+    <div class="research-area">
+      <h3>Computational Linguistics</h3>
+      <p>
+        Natural language processing, language models, and computational
+        semantics.
+      </p>
+    </div>
+    <div class="research-area">
+      <h3>Machine Learning Applications</h3>
+      <p>
+        Applying ML techniques to solve real-world language understanding
+        problems.
+      </p>
+    </div>
   </section>
 
   <section class="publications">
-    <h2><span class="icon">📁</span> Publications</h2>
-    {
-      projects.length > 0 ? (
-        projects.map((project) => (
-          <div class="project-item">
-            <a href={project.url} class="project-title">
-              {project.frontmatter.title}
-            </a>
-            <p class="project-description">{project.frontmatter.description}</p>
-          </div>
-        ))
-      ) : (
-        <p class="empty-message">Projects coming soon!</p>
-      )
-    }
+    <h2><span class="icon">📚</span> Publications</h2>
+    <div class="publication-item">
+      <h3>Journal Articles</h3>
+      <p class="publication-citation">
+        Kayan, C.E. (2022). "Title of Research Paper." <em
+          >Journal of Academic Studies</em
+        >, 15(2), 45-62.
+      </p>
+      <p class="publication-citation">
+        Kayan, C.E., et al. (2021). "Another Research Paper." <em
+          >International Journal</em
+        >, 8(3), 112-128.
+      </p>
+    </div>
   </section>
 
   <section class="education">
@@ -102,7 +86,9 @@ const projects = Object.values(
   .post-item,
   .project-item,
   .experience-item,
-  .education-item {
+  .education-item,
+  .research-area,
+  .publication-item {
     margin: 1.5rem 0;
   }
 
@@ -156,5 +142,25 @@ const projects = Object.values(
     color: #aaa;
     font-size: 0.95rem;
     margin-top: 0.25rem;
+  }
+
+  .research-area h3,
+  .publication-item h3 {
+    color: #eee;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-citation {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .research-area p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 </style>
