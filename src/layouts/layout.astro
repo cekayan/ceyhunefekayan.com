@@ -2,11 +2,15 @@
 import "../styles/global.css";
 import "@fontsource-variable/geist";
 
+import { SEO } from "astro-seo";
+import siteData from "../data/site.json";
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const { seo } = siteData;
 ---
 
 <!doctype html>
@@ -24,7 +28,7 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <SEO title={title} description={seo.description} />
   </head>
   <body>
     <div class="container">
