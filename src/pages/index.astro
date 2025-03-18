@@ -1,11 +1,13 @@
 ---
 import SidebarLayout from "../layouts/sidebar-layout.astro";
 
-const posts = await Astro.glob("./posts/*.md");
-const projects = await Astro.glob("./projects/*.md");
+const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
+const projects = Object.values(
+  import.meta.glob("./projects/*.md", { eager: true })
+);
 ---
 
-<SidebarLayout title="t3ma - SEO and DEV ">
+<SidebarLayout title="Ceyhun Efe Kayan">
   <section class="about">
     <h2><span class="icon">👤</span> About me</h2>
     <p>
@@ -18,28 +20,36 @@ const projects = await Astro.glob("./projects/*.md");
   <section class="posts">
     <h2><span class="icon">📡</span> Themes</h2>
     {
-      posts.map((post) => (
-        <div class="post-item">
-          <a href={post.url} class="post-title">
-            {post.frontmatter.title}
-          </a>
-          <p class="post-description">{post.frontmatter.description}</p>
-        </div>
-      ))
+      posts.length > 0 ? (
+        posts.map((post) => (
+          <div class="post-item">
+            <a href={post.url} class="post-title">
+              {post.frontmatter.title}
+            </a>
+            <p class="post-description">{post.frontmatter.description}</p>
+          </div>
+        ))
+      ) : (
+        <p class="empty-message">No posts available yet. Check back soon!</p>
+      )
     }
   </section>
 
   <section class="projects">
     <h2><span class="icon">📁</span> Projects</h2>
     {
-      projects.map((project) => (
-        <div class="project-item">
-          <a href={project.url} class="project-title">
-            {project.frontmatter.title}
-          </a>
-          <p class="project-description">{project.frontmatter.description}</p>
-        </div>
-      ))
+      projects.length > 0 ? (
+        projects.map((project) => (
+          <div class="project-item">
+            <a href={project.url} class="project-title">
+              {project.frontmatter.title}
+            </a>
+            <p class="project-description">{project.frontmatter.description}</p>
+          </div>
+        ))
+      ) : (
+        <p class="empty-message">Projects coming soon!</p>
+      )
     }
   </section>
 
@@ -109,5 +119,11 @@ const projects = await Astro.glob("./projects/*.md");
 
   .icon {
     font-size: 1.2rem;
+  }
+
+  .empty-message {
+    color: #888;
+    font-style: italic;
+    padding: 1rem 0;
   }
 </style>
