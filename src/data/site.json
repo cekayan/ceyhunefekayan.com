@@ -1,6 +1,6 @@
 {
   "profile": {
-    "name": "t3ma",
+    "name": "Ceyhun Efe Kayan",
     "avatar": "/avatar.jpg",
     "bio": [
       {
@@ -14,19 +14,14 @@
     ],
     "socials": [
       {
+        "name": "Email",
+        "icon": "📧",
+        "url": "mailto:cefe@gmail.com"
+      },
+      {
         "name": "GitHub",
         "icon": "📱",
-        "url": "https://github.com/temaprint"
-      },
-      {
-        "name": "Telegram",
-        "icon": "✈️",
-        "url": "https://t.me/t_3_m_a"
-      },
-      {
-        "name": "Facebook",
-        "icon": "👥",
-        "url": "https://facebook.com/temaprint/"
+        "url": "https://github.com/cekayan"
       },
       {
         "name": "LinkedIn",
@@ -37,11 +32,6 @@
         "name": "Twitter",
         "icon": "\uD83D\uDC26",
         "url": "https://twitter.com/temaprint"
-      },
-      {
-        "name": "Habr",
-        "icon": "🌟",
-        "url": "https://career.habr.com/netema"
       }
     ]
   }
