@@ -9,9 +9,10 @@ import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://ceyhunefekayan.com",
   vite: {
     plugins: [tailwindcss()]
   },
 
-  integrations: [sitemap(), robotsTxt()]
+  integrations: [sitemap(), robotsTxt({sitemap: "https://ceyhunefekayan.com/sitemap-index.xml"})]
 });
