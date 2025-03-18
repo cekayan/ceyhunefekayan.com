@@ -34,5 +34,62 @@
         "url": "https://twitter.com/temaprint"
       }
     ]
+  },
+  "about": {
+    "icon": "👤",
+    "title": "About me",
+    "content": "SEO is what I love. If you think that SEO is only about title, description and Semantic Core, then unfortunately not, this is just the tip of the iceberg."
+  },
+  "researchInterests": {
+    "icon": "🔬",
+    "title": "Research Interests",
+    "areas": [
+      {
+        "title": "Computational Linguistics",
+        "description": "Natural language processing, language models, and computational semantics."
+      },
+      {
+        "title": "Machine Learning Applications",
+        "description": "Applying ML techniques to solve real-world language understanding problems."
+      }
+    ]
+  },
+  "publications": {
+    "icon": "📚",
+    "title": "Publications",
+    "categories": [
+      {
+        "title": "Journal Articles",
+        "citations": [
+          "Kayan, C.E. (2022). \"Title of Research Paper.\" <em>Journal of Academic Studies</em>, 15(2), 45-62.",
+          "Kayan, C.E., et al. (2021). \"Another Research Paper.\" <em>International Journal</em>, 8(3), 112-128."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "icon": "🎓",
+    "title": "Education",
+    "items": [
+      {
+        "period": "2015 - 2019",
+        "title": "University Name - Degree in Field",
+        "description": "Brief description of studies or achievements."
+      }
+    ]
+  },
+  "workExperience": {
+    "icon": "💼",
+    "title": "Work Experience",
+    "items": [
+      {
+        "period": "2020 - present",
+        "title": "Icons8.com - SEO"
+      },
+      {
+        "period": "2010 - 2020",
+        "title": "Citysakh.ru - CEO"
+      }
+    ]
   }
 }

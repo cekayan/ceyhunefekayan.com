@@ -1,76 +1,77 @@
 ---
 import SidebarLayout from "../layouts/sidebar-layout.astro";
+import siteData from "../data/site.json";
+
+const { about, researchInterests, publications, education, workExperience } =
+  siteData;
 ---
 
-<SidebarLayout title="Ceyhun Efe Kayan">
+<SidebarLayout title={siteData.profile.name}>
   <section class="about">
-    <h2><span class="icon">👤</span> About me</h2>
+    <h2><span class="icon">{about.icon}</span> {about.title}</h2>
     <p>
-      SEO is what I love. If you think that SEO is only about title, description
-      and Semantic Core, then unfortunately not, this is just the tip of the
-      iceberg.
+      {about.content}
     </p>
   </section>
 
   <section class="research-interests">
-    <h2><span class="icon">🔬</span> Research Interests</h2>
-    <div class="research-area">
-      <h3>Computational Linguistics</h3>
-      <p>
-        Natural language processing, language models, and computational
-        semantics.
-      </p>
-    </div>
-    <div class="research-area">
-      <h3>Machine Learning Applications</h3>
-      <p>
-        Applying ML techniques to solve real-world language understanding
-        problems.
-      </p>
-    </div>
+    <h2>
+      <span class="icon">{researchInterests.icon}</span>
+      {researchInterests.title}
+    </h2>
+    {
+      researchInterests.areas.map((area) => (
+        <div class="research-area">
+          <h3>{area.title}</h3>
+          <p>{area.description}</p>
+        </div>
+      ))
+    }
   </section>
 
   <section class="publications">
-    <h2><span class="icon">📚</span> Publications</h2>
-    <div class="publication-item">
-      <h3>Journal Articles</h3>
-      <p class="publication-citation">
-        Kayan, C.E. (2022). "Title of Research Paper." <em
-          >Journal of Academic Studies</em
-        >, 15(2), 45-62.
-      </p>
-      <p class="publication-citation">
-        Kayan, C.E., et al. (2021). "Another Research Paper." <em
-          >International Journal</em
-        >, 8(3), 112-128.
-      </p>
-    </div>
+    <h2><span class="icon">{publications.icon}</span> {publications.title}</h2>
+    {
+      publications.categories.map((category) => (
+        <div class="publication-item">
+          <h3>{category.title}</h3>
+          {category.citations.map((citation) => (
+            <p class="publication-citation" set:html={citation} />
+          ))}
+        </div>
+      ))
+    }
   </section>
 
   <section class="education">
-    <h2><span class="icon">🎓</span> Education</h2>
-    <div class="education-item">
-      <div class="education-header">
-        <span class="date">2015 - 2019</span>
-        <h3>University Name - Degree in Field</h3>
-      </div>
-      <p class="education-description">
-        Brief description of studies or achievements.
-      </p>
-    </div>
+    <h2><span class="icon">{education.icon}</span> {education.title}</h2>
+    {
+      education.items.map((item) => (
+        <div class="education-item">
+          <div class="education-header">
+            <span class="date">{item.period}</span>
+            <h3>{item.title}</h3>
+          </div>
+          <p class="education-description">{item.description}</p>
+        </div>
+      ))
+    }
   </section>
 
   <section class="work-experience">
-    <h2><span class="icon">💼</span> Work Experience</h2>
+    <h2>
+      <span class="icon">{workExperience.icon}</span>
+      {workExperience.title}
+    </h2>
     <div class="experience-item">
-      <div class="experience-header">
-        <span class="date">2020 - present</span>
-        <h3>Icons8.com - SEO</h3>
-      </div>
-      <div class="experience-header">
-        <span class="date">2010 - 2020</span>
-        <h3>Citysakh.ru - CEO</h3>
-      </div>
+      {
+        workExperience.items.map((item) => (
+          <div class="experience-header">
+            <span class="date">{item.period}</span>
+            <h3>{item.title}</h3>
+          </div>
+        ))
+      }
     </div>
   </section>
 </SidebarLayout>
