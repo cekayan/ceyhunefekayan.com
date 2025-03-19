@@ -60,15 +60,14 @@
   "publications": {
     "icon": "📚",
     "title": "Publications",
-    "categories": [
-      {
-        "title": "Journal Articles",
-        "citations": [
-          "Kayan, C.E. (2022). \"Title of Research Paper.\" <em>Journal of Academic Studies</em>, 15(2), 45-62.",
-          "Kayan, C.E., et al. (2021). \"Another Research Paper.\" <em>International Journal</em>, 8(3), 112-128."
-        ]
-      }
-    ]
+    "journalPapers": [
+      "Kayan, C.E. (2022). \"Title of Research Paper.\" <em>Journal of Academic Studies</em>, 15(2), 45-62.",
+      "Kayan, C.E., et al. (2021). \"Another Research Paper.\" <em>International Journal</em>, 8(3), 112-128."
+    ],
+    "conferencePapers": [
+      "Kayan, C.E. (2023). \"Conference Paper Title.\" <em>Proceedings of International Conference</em>, pp. 234-241."
+    ],
+    "preprints": []
   },
   "education": {
     "icon": "🎓",

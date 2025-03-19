@@ -31,16 +31,50 @@ const { about, researchInterests, publications, education, workExperience } =
 
   <section class="publications">
     <h2><span class="icon">{publications.icon}</span> {publications.title}</h2>
-    {
-      publications.categories.map((category) => (
-        <div class="publication-item">
-          <h3>{category.title}</h3>
-          {category.citations.map((citation) => (
-            <p class="publication-citation" set:html={citation} />
-          ))}
-        </div>
-      ))
-    }
+
+    <div class="publication-category">
+      <h3>Journal Papers</h3>
+      {
+        publications.journalPapers?.map((citation) => (
+          <p class="publication-citation" set:html={citation} />
+        ))
+      }
+      {
+        (!publications.journalPapers ||
+          publications.journalPapers.length === 0) && (
+          <p class="empty-message">No journal papers yet.</p>
+        )
+      }
+    </div>
+
+    <div class="publication-category">
+      <h3>Conference Papers</h3>
+      {
+        publications.conferencePapers?.map((citation) => (
+          <p class="publication-citation" set:html={citation} />
+        ))
+      }
+      {
+        (!publications.conferencePapers ||
+          publications.conferencePapers.length === 0) && (
+          <p class="empty-message">No conference papers yet.</p>
+        )
+      }
+    </div>
+
+    <div class="publication-category">
+      <h3>Preprints</h3>
+      {
+        publications.preprints?.map((citation) => (
+          <p class="publication-citation" set:html={citation} />
+        ))
+      }
+      {
+        (!publications.preprints || publications.preprints.length === 0) && (
+          <p class="empty-message">No preprints yet.</p>
+        )
+      }
+    </div>
   </section>
 
   <section class="education">
@@ -93,7 +127,8 @@ const { about, researchInterests, publications, education, workExperience } =
   .experience-item,
   .education-item,
   .research-area,
-  .publication-item {
+  .publication-item,
+  .publication-category {
     margin: 1.5rem 0;
   }
 
@@ -140,7 +175,7 @@ const { about, researchInterests, publications, education, workExperience } =
   .empty-message {
     color: #888;
     font-style: italic;
-    padding: 1rem 0;
+    padding: 0 0;
   }
 
   .education-description {
