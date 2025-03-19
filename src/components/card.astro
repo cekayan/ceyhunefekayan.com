@@ -35,7 +35,7 @@ const { href, title, body } = Astro.props;
     width: 100%;
     text-decoration: none;
     line-height: 1.4;
-    padding: calc(1.5rem - 1px);
+    padding: calc(1.5 * var(--spacing-unit, 1rem) - 1px);
     border-radius: 8px;
     color: white;
     background-color: #23262d;
@@ -43,11 +43,11 @@ const { href, title, body } = Astro.props;
   }
   h2 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: calc(1.25 * var(--base-font-size, 16px));
     transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
   p {
-    margin-top: 0.5rem;
+    margin-top: calc(0.5 * var(--spacing-unit, 1rem));
     margin-bottom: 0;
   }
   .link-card:is(:hover, :focus-within) {
