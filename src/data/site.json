@@ -61,11 +61,20 @@
     "icon": "📚",
     "title": "Publications",
     "journalPapers": [
-      "Kayan, C.E. (2022). \"Title of Research Paper.\" <em>Journal of Academic Studies</em>, 15(2), 45-62.",
-      "Kayan, C.E., et al. (2021). \"Another Research Paper.\" <em>International Journal</em>, 8(3), 112-128."
+      {
+        "text": "Kayan, C.E. (2022). \"Title of Research Paper.\" <em>Journal of Academic Studies</em>, 15(2), 45-62.",
+        "url": "https://example.com/journal-paper-1"
+      },
+      {
+        "text": "Kayan, C.E., et al. (2021). \"Another Research Paper.\" <em>International Journal</em>, 8(3), 112-128.",
+        "url": "https://example.com/journal-paper-2"
+      }
     ],
     "conferencePapers": [
-      "Kayan, C.E. (2023). \"Conference Paper Title.\" <em>Proceedings of International Conference</em>, pp. 234-241."
+      {
+        "text": "Kayan, C.E. (2023). \"Conference Paper Title.\" <em>Proceedings of International Conference</em>, pp. 234-241.",
+        "url": "https://example.com/conference-paper-1"
+      }
     ],
     "preprints": []
   },

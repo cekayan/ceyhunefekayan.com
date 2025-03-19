@@ -2,6 +2,11 @@
 import SidebarLayout from "../layouts/sidebar-layout.astro";
 import siteData from "../data/site.json";
 
+type Citation = {
+  text: string;
+  url: string;
+};
+
 const { about, researchInterests, publications, education, workExperience } =
   siteData;
 ---
@@ -35,8 +40,15 @@ const { about, researchInterests, publications, education, workExperience } =
     <div class="publication-category">
       <h3>Journal Papers</h3>
       {
-        publications.journalPapers?.map((citation) => (
-          <p class="publication-citation" set:html={citation} />
+        publications.journalPapers?.map((citation: Citation) => (
+          <p class="publication-citation">
+            <a
+              href={citation.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              set:html={citation.text}
+            />
+          </p>
         ))
       }
       {
@@ -50,8 +62,15 @@ const { about, researchInterests, publications, education, workExperience } =
     <div class="publication-category">
       <h3>Conference Papers</h3>
       {
-        publications.conferencePapers?.map((citation) => (
-          <p class="publication-citation" set:html={citation} />
+        publications.conferencePapers?.map((citation: Citation) => (
+          <p class="publication-citation">
+            <a
+              href={citation.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              set:html={citation.text}
+            />
+          </p>
         ))
       }
       {
@@ -65,8 +84,15 @@ const { about, researchInterests, publications, education, workExperience } =
     <div class="publication-category">
       <h3>Preprints</h3>
       {
-        publications.preprints?.map((citation) => (
-          <p class="publication-citation" set:html={citation} />
+        publications.preprints?.map((citation: Citation) => (
+          <p class="publication-citation">
+            <a
+              href={citation.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              set:html={citation.text}
+            />
+          </p>
         ))
       }
       {
@@ -196,6 +222,17 @@ const { about, researchInterests, publications, education, workExperience } =
     font-size: 0.95rem;
     margin-bottom: 0.75rem;
     line-height: 1.5;
+  }
+
+  .publication-citation a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .publication-citation a:hover {
+    color: #fff;
+    text-decoration: underline;
   }
 
   .research-area p {
