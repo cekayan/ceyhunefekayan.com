@@ -41,19 +41,19 @@
   "about": {
     "icon": "👤",
     "title": "About me",
-    "content": "SEO is what I love. If you think that SEO is only about title, description and Semantic Core, then unfortunately not, this is just the tip of the iceberg."
+    "content": "I'm Ceyhun, a Machine Learning Engineer who's passionate about enhancing AI reasoning capabilities by integrating fundamental science concepts.\n\nMy research experience spans multi-omics data integration for predicting targeted treatment responses and modeling drug-induced proteome dynamics."
   },
   "researchInterests": {
     "icon": "🔬",
-    "title": "Research Interests",
+    "title": "Research Interests and Expertise",
     "areas": [
       {
-        "title": "Computational Linguistics",
-        "description": "Natural language processing, language models, and computational semantics."
+        "title": "Foundation on Intelligence Reasoning",
+        "description": "I'm passionate about enhancing AI reasoning capabilities by integrating fundamental scientific principles. My interests include developing models that can leverage domain knowledge to analyze and discover from the environment."
       },
       {
-        "title": "Machine Learning Applications",
-        "description": "Applying ML techniques to solve real-world language understanding problems."
+        "title": "ML for Presicion Oncology",
+        "description": "My applied research focuses on developing ML approaches for precision oncology. At Drexel University, I've collaborated with researchers from MD Anderson Cancer Center to design ML frameworks that integrate multi-omics data for predicting responses to targeted cancer therapies. My experience includes data preprocessing and feature engineering for complex datasets and designing ML model architectures."
       }
     ]
   },
@@ -62,44 +62,55 @@
     "title": "Publications",
     "journalPapers": [
       {
-        "text": "Kayan, C.E. (2022). \"Title of Research Paper.\" <em>Journal of Academic Studies</em>, 15(2), 45-62.",
-        "url": "https://example.com/journal-paper-1"
+        "text": "<b>Kayan, C. E.</b>, Yuksel Aldogan, K., & Gumus, A. <b>(2023)</b>. \"Intensity and phase stacked analysis of a Phase-OTDR system using deep transfer learning and recurrent neural networks\", <b><em>Applied Optics</em></b>, 62(7), 1753-1764.",
+        "url": "https://opg.optica.org/ao/viewmedia.cfm?uri=ao-62-7-1753"
       },
       {
-        "text": "Kayan, C.E., et al. (2021). \"Another Research Paper.\" <em>International Journal</em>, 8(3), 112-128.",
-        "url": "https://example.com/journal-paper-2"
+        "text": "Duzyel, O., Catal, M., <b>Kayan, C. E.</b>, Sevinc, A., & Gumus, A. <b>(2023)</b>. \"Adaptive resizer-based transfer learning framework for the diagnosis of breast cancer using histopathology images\", <em><b>Signal, Image and Video Processing</b></em>, 17-10:1.",
+        "url": "https://link.springer.com/article/10.1007/s11760-023-02692-y"
       }
     ],
-    "conferencePapers": [
+    "conferencePapers": [],
+    "preprints": [
       {
-        "text": "Kayan, C.E. (2023). \"Conference Paper Title.\" <em>Proceedings of International Conference</em>, pp. 234-241.",
-        "url": "https://example.com/conference-paper-1"
+        "text": "<b>Kayan, C. E.</b>, Koksal, T. E., Sevinc, A., & Gumus, A. <b>(2023)</b>. \"Deep reproductive feature generation framework for the diagnosis of covid-19 and viral pneumonia using chest x-ray images\", <b><em>Arxiv</em></b>.",
+        "url": "https://arxiv.org/pdf/2304.10677"
       }
-    ],
-    "preprints": []
+    ]
   },
   "education": {
     "icon": "🎓",
     "title": "Education",
     "items": [
       {
-        "period": "2015 - 2019",
-        "title": "University Name - Degree in Field",
-        "description": "Brief description of studies or achievements."
+        "period": "2022 - 2025",
+        "title": "Drexel University - MSc in ML Engineering",
+        "description": "GPA: 3.98"
+      },
+      {
+        "period": "2018 - 2022",
+        "title": "Izmir Institute of Technology - BSc in Electrical and Electronics Engineering",
+        "description": "Graduated as department valedictorian."
       }
     ]
   },
   "workExperience": {
     "icon": "💼",
-    "title": "Work Experience",
+    "title": "Experience",
     "items": [
       {
-        "period": "2020 - present",
-        "title": "Icons8.com - SEO"
+        "period": "Sep 2022 - Aug 2025",
+        "title": "Research Assistant",
+        "description": "Developed ML pipelines for precision oncology and collaborated with MD Anderson Cancer Center on multi-omics data integration for predicting therapy responses."
       },
       {
-        "period": "2010 - 2020",
-        "title": "Citysakh.ru - CEO"
+        "period": "Sep 2021 - Jul 2022",
+        "title": "Part-Time ML Engineer",
+        "description": "Developed predictive models for real estate sales and contributing to image segmentation and recommender systems."
+      },
+      {
+        "period": "Jul 2021 - Jul 2022",
+        "title": "Undergraduate Research Assistant"
       }
     ]
   }
