@@ -1,19 +1,19 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
-import react from "@astrojs/react";
-import tailwindcss from '@tailwindcss/vite'
+import react from '@astrojs/react';
+import tailwindcss from '@tailwindcss/vite';
 
-import { template } from "./src/settings";
+import { template } from './src/settings';
 
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [react(), sitemap()],
-    site: template.website_url,
-    base: template.base,
-    vite: {
-        plugins: [tailwindcss()],
-    },
+  integrations: [react(), sitemap()],
+  site: template.website_url,
+  base: template.base,
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
