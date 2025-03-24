@@ -12,6 +12,7 @@
     "@astrojs/react": "^4.2.1",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
+    "@tailwindcss/vite": "^4.0.15",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "astro": "^5.5.4",
@@ -21,7 +22,6 @@
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16",
     "daisyui": "^5.0.9"
   },
   "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
