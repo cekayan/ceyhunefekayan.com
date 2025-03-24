@@ -42,6 +42,9 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0
     devDependencies:
+      '@ardasevinc/prettier-config':
+        specifier: ^0.1.5
+        version: 0.1.5
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.0.15)
@@ -54,6 +57,10 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@ardasevinc/prettier-config@0.1.5':
+    resolution: {integrity: sha512-XbKjDGQVDoxggQjQC2N4YYdDImJu06rAGrYeV+ZNZrt9b3tl2JwsA1HHg8StgV6fvTWUWK2AWuuBU81q+aYmSA==}
+    engines: {npm: '>=9'}
 
   '@astrojs/compiler@2.11.0':
     resolution: {integrity: sha512-zZOO7i+JhojO8qmlyR/URui6LyfHJY6m+L9nwyX5GiKD78YoRaZ5tzz6X0fkl+5bD3uwlDHayf6Oe8Fu36RKNg==}
@@ -1823,6 +1830,8 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@ardasevinc/prettier-config@0.1.5': {}
 
   '@astrojs/compiler@2.11.0': {}
 

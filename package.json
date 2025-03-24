@@ -22,6 +22,7 @@
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
+    "@ardasevinc/prettier-config": "^0.1.5",
     "@tailwindcss/typography": "^0.5.16",
     "daisyui": "^5.0.9"
   },
@@ -31,5 +32,6 @@
       "esbuild",
       "sharp"
     ]
-  }
+  },
+  "prettier": "@ardasevinc/prettier-config"
 }
