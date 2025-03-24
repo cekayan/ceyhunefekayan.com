@@ -27,6 +27,12 @@ const {
 <!doctype html>
 <html lang='en'>
   <head>
+    <script is:inline>
+      // Prevent flash of wrong theme (FART)
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
     {template.transitions && <ClientRouter />}
 
     <Head title={title} description={description} image={image} />

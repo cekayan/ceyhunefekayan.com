@@ -1,13 +1,17 @@
 <div class='dropdown dropdown-end z-50'>
-  <button tabindex='0' class='btn btn-ghost btn-square size-10 rounded-lg'>
-    <!-- Sun icon for light theme -->
+  <button
+    tabindex='0'
+    class='btn btn-ghost btn-square size-10 rounded-lg'
+    data-toggle-theme='dark,light'
+  >
+    <!-- Light mode icon (shows when current theme is light) -->
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 24 24'
-      class='size-6 stroke-current hidden'
+      class='size-6 stroke-current'
       stroke-width='1.75'
       fill='none'
-      data-theme-condition='light'
+      data-set-theme-target='light'
     >
       <path
         stroke-linecap='round'
@@ -16,14 +20,14 @@
       ></path>
     </svg>
 
-    <!-- Moon icon for dark theme -->
+    <!-- Dark mode icon (shows when current theme is dark) -->
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 24 24'
-      class='size-6 stroke-current hidden'
+      class='size-6 stroke-current'
       stroke-width='1.75'
       fill='none'
-      data-theme-condition='dark'
+      data-set-theme-target='dark'
     >
       <path
         stroke-linecap='round'
@@ -82,31 +86,26 @@
   </div>
 </div>
 
-<script>
-  // Handle theme-dependent icon visibility
-  function updateThemeIcons() {
-    const currentTheme =
-      document.documentElement.getAttribute('data-theme') || 'light';
-
-    // Get all theme condition elements
-    document.querySelectorAll('[data-theme-condition]').forEach((el) => {
-      const condition = el.getAttribute('data-theme-condition');
-
-      // Show/hide based on theme
-      if (condition === currentTheme) {
-        el.classList.remove('hidden');
-      } else {
-        el.classList.add('hidden');
-      }
-    });
+<style>
+  /* Hide all theme icons by default */
+  [data-set-theme-target] {
+    display: none;
   }
 
-  // Initial update
-  updateThemeIcons();
+  /* Show only the icon that matches the current theme */
+  html[data-theme='light'] [data-set-theme-target='light'] {
+    display: block;
+  }
 
-  // Update on theme change
-  document.addEventListener('themeChange', updateThemeIcons);
+  html[data-theme='dark'] [data-set-theme-target='dark'] {
+    display: block;
+  }
+</style>
 
-  // Update after navigation with Astro View Transitions
-  document.addEventListener('astro:after-swap', updateThemeIcons);
+<script is:inline>
+  // Initialize with the correct icon visible
+  (function () {
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
 </script>
