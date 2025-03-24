@@ -12,7 +12,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   integrations: [react(), sitemap()],
   site: template.website_url,
-  base: template.base,
   vite: {
     plugins: [tailwindcss()],
   },
