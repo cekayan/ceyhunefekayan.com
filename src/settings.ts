@@ -1,21 +1,23 @@
 export const profile = {
-  fullName: 'Your Name',
-  title: '',
-  institute: '',
-  author_name: '', // Author name to be highlighted in the papers section
+  fullName: 'Ceyhun E. Kayan',
+  title: 'Graduate Student',
+  institute: 'Drexel University',
+  author_name: 'CE Kayan', // Author name to be highlighted in the papers section
   research_areas: [
-    // { title: 'Physics', description: 'Brief description of the research interest', field: 'physics' },
+     { title: 'Computational Biology', description: 'Modeling protein-protein dynamics, predicting treatment responses and multi-omics data integration.', field: 'bio' },
+     { title: 'Language Models', description: 'Enhancing reasoning performance of Language Models and entropy-oriented sampling.', field: 'lm' },
+     { title: 'Machine Intelligence', description: 'Developing neuroscience and cognitive science inspired models for more humanistic machine intelligence.', field: 'mi' },
   ],
 };
 
 // Set equal to an empty string to hide the icon that you don't want to display
 export const social = {
-  email: '',
-  linkedin: '',
-  x: 'https://www.x.com/',
-  github: '',
+  email: 'cekayan.tech@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/cekayan',
+  x: 'https://x.com/cekayan',
+  github: 'https://github.com/cekayan',
   gitlab: '',
-  scholar: '',
+  scholar: 'https://scholar.google.com/citations?user=dT5jOoUAAAAJ&hl=en',
   inspire: '',
   arxiv: '',
 };

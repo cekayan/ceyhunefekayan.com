@@ -37,7 +37,20 @@ const { elements, colored } = Astro.props;
           <div class='text-lg font-black'>
             {isExperience(element) ? element.title : element.degree}
           </div>
-          <div>{element.description}</div>
+          <div>
+            {typeof element.description === 'string' && element.description.startsWith('http') ? (
+              <a 
+                href={element.description} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-primary hover:underline"
+              >
+                Visit Website
+              </a>
+            ) : (
+              element.description
+            )}
+          </div>
           <div>{isExperience(element) ? element.company : element.school}</div>
           <div>{element.location}</div>
         </div>

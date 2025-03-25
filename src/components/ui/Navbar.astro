@@ -25,7 +25,6 @@ const { fullName, title } = profile;
           alt={`Profile picture of ${fullName}`}
         />
         <h1 class='text-lg font-black mt-8 hidden lg:block'>
-          {title}
           <span>{fullName}</span>
         </h1>
       </div>
@@ -38,10 +37,10 @@ const { fullName, title } = profile;
             <a href={`${template.base}/research`} class='text-lg'>Research</a>
           </li>
           <li>
-            <a href={`${template.base}/papers`} class='text-lg'>Papers</a>
+            <a href={`${template.base}/papers`} class='text-lg'>Publications</a>
           </li>
           <li>
-            <a href={`${template.base}/cv`} class='text-lg'>CV</a>
+            <a href={`${template.base}/cv`} class='text-lg'>Curriculum Vitae</a>
           </li>
           {
             isBlogPopulated && (

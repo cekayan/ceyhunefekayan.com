@@ -13,9 +13,11 @@ const { fullName, title, institute, profilePicture } = Astro.props;
   <p class='text-xl text-gray-600 mb-4'>
     {title}{institute ? ` at ${institute}` : ''}
   </p>
-  <p class='text-lg mb-6'>
-    Brief impactful description of your research focus and academic mission.
-    Highlight your key contributions and areas of expertise.
+  <p class='text-lg mb-6' style="text-align:justify;"> 
+    
+    I develop intelligent systems at the intersection of machine learning and healthcare. My research explores how AI can learn from biological
+    data to solve core problems. Through innovative approaches to representation learning, I aim to create models that
+    understand concepts at their most essential level, bridging theoretical advances with real-world applications.
   </p>
   <div class='flex gap-4'>
     <SocialIcons />
