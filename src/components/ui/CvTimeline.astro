@@ -31,19 +31,20 @@ const { elements, colored } = Astro.props;
           </svg>
         </div>
         <div
-          class={`${index - (1 % 2) ? 'timeline-start' : 'timeline-end'} mb-10 md:text-end`}
+          class={`${index % 2 === 0 ? 'timeline-start md:text-end' : 'timeline-end md:text-start'} mb-10`}
         >
           <time class='font-mono italic'>{element.time}</time>
           <div class='text-lg font-black'>
             {isExperience(element) ? element.title : element.degree}
           </div>
           <div>
-            {typeof element.description === 'string' && element.description.startsWith('http') ? (
-              <a 
-                href={element.description} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="text-primary hover:underline"
+            {typeof element.description === 'string' &&
+            element.description.startsWith('http') ? (
+              <a
+                href={element.description}
+                target='_blank'
+                rel='noopener noreferrer'
+                class='text-primary hover:underline'
               >
                 Visit Website
               </a>
