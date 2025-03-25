@@ -9,41 +9,52 @@ const ALL_PAPERS = publications; // This will be replaced with dynamic data late
 
 <Layout title='Papers'>
   <div class='prose max-w-none'>
-    <h1 class='text-3xl font-bold mb-8'>Publications</h1>
+    <h1 class='text-3xl font-bold mb-6'>Publications</h1>
 
-    <div class='space-y-8'>
+    <div class='space-y-4'>
       {
         ALL_PAPERS.map((paper) => (
-          <div class='card bg-base-200'>
-            <div class='card-body'>
-              <h2 class='card-title text-xl'>
-                <a href={template.base + paper.link} class='hover:text-accent'>
-                  {paper.title}
-                </a>
-              </h2>
-              <p class='text-base mb-2'>
-                <span class='font-medium'>Authors:</span>{' '}
-                <span set:html={highlightAuthor(paper.authors)} />
-              </p>
-              <p class='text-sm mb-3'>
-                <span class='italic'>{paper.journal}</span> • {paper.time}
-              </p>
-              <p class='text-sm text-base-content/80'>{paper.abstract}</p>
-              <div class='card-actions justify-end mt-4'>
-                <a
-                  href={paper.link}
-                  class='btn btn-sm btn-secondary text-secondary-content'
-                >
-                  Read Paper
-                </a>
+          <div class='card bg-base-200 shadow-sm hover:shadow-md transition-shadow duration-200'>
+            <div class='card-body p-4'>
+              <div class='flex flex-col md:flex-row md:items-center md:justify-between gap-2'>
+                <div class='flex-1'>
+                  <h2 class='card-title text-lg font-bold mb-1'>
+                    <a
+                      href={template.base + paper.link}
+                      class='hover:text-accent'
+                    >
+                      {paper.title}
+                    </a>
+                  </h2>
+                  <p class='text-sm mb-1'>
+                    <span class='font-medium'>Authors:</span>{' '}
+                    <span set:html={highlightAuthor(paper.authors)} />
+                  </p>
+                  <p class='text-xs opacity-75'>
+                    <span class='italic'>{paper.journal}</span> • {paper.time}
+                  </p>
+                </div>
+                <div class='flex-shrink-0'>
+                  <a
+                    href={paper.link}
+                    class='btn btn-xs btn-secondary text-secondary-content'
+                  >
+                    Read Paper
+                  </a>
+                </div>
               </div>
+              {paper.abstract && (
+                <div class='mt-2 pt-2 border-t border-base-300'>
+                  <p class='text-xs text-base-content/70'>{paper.abstract}</p>
+                </div>
+              )}
             </div>
           </div>
         ))
       }
     </div>
 
-    <div class='flex justify-center mt-8'>
+    <div class='flex justify-center mt-6'>
       <div class='join'>
         <button class='join-item btn btn-sm'>«</button>
         <button class='join-item btn btn-sm'>1</button>
