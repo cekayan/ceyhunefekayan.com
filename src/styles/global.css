@@ -305,25 +305,3 @@ main {
   font-size: 0.9rem;
   padding: 0.3rem 0.8rem;
 }
-.skills {
-  margin: 0;
-}
-.skills div {
-  display: grid;
-  grid-template-columns: 8.5rem 1fr;
-  gap: 1rem;
-  padding-block: 0.35rem;
-}
-.skills dt {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-.skills dd {
-  margin: 0;
-}
-@media (max-width: 40rem) {
-  .skills div {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-}

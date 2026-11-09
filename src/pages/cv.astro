@@ -1,7 +1,7 @@
 ---
 import Base from '@/layouts/Base.astro';
 import PublicationItem from '@/components/PublicationItem.astro';
-import { site, education, experience, publications, skills, type CvEntry } from '@/data/site';
+import { site, education, experience, publications, type CvEntry } from '@/data/site';
 
 const sections: { title: string; entries: CvEntry[] }[] = [
   { title: 'Education', entries: education },
@@ -46,16 +46,4 @@ const sections: { title: string; entries: CvEntry[] }[] = [
     {publications.map((pub) => <PublicationItem pub={pub} />)}
   </ul>
   <p class='footnote'>* Equal contribution.</p>
-
-  <h2>Skills</h2>
-  <dl class='skills'>
-    {
-      skills.map((s) => (
-        <div>
-          <dt>{s.area}</dt>
-          <dd>{s.items}</dd>
-        </div>
-      ))
-    }
-  </dl>
 </Base>

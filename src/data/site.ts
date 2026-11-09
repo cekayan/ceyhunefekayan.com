@@ -172,14 +172,3 @@ export const experience: CvEntry[] = [
     ],
   },
 ];
-
-export const skills: { area: string; items: string }[] = [
-  {
-    area: 'Interpretability',
-    items: 'Activation steering, linear probing, representation geometry, SAEs, transformer circuits',
-  },
-  {
-    area: 'ML tools',
-    items: 'PyTorch, Hugging Face Transformers, TransformerLens, SAE Lens, vLLM, nnsight',
-  },
-];
