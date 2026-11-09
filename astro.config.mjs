@@ -1,18 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
-import react from '@astrojs/react';
-import tailwindcss from '@tailwindcss/vite';
-
-import { template } from './src/settings';
-
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [react(), sitemap()],
-  site: template.website_url,
-  vite: {
-    plugins: [tailwindcss()],
+  site: 'https://cekayan.com',
+  integrations: [sitemap()],
+  // Keep old URLs from the previous site working.
+  redirects: {
+    '/papers': '/publications/',
+    '/research': '/',
   },
 });

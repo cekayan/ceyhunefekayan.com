@@ -1,83 +1,61 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import { experiences, education, skills, publications } from '../data/cv';
-import CvTimeline from '@/components/ui/CvTimeline.astro';
+import Base from '@/layouts/Base.astro';
+import PublicationItem from '@/components/PublicationItem.astro';
+import { site, education, experience, publications, skills, type CvEntry } from '@/data/site';
 
-import type { Experience, Education, Publication } from '../types/cv';
-import List from '@/components/ui/List.astro';
-import PublicationsList from '@/components/ui/PublicationsList.astro';
-
-let orderdExperiences: Experience[] = [];
-let orderdEducations: Education[] = [];
-let orderedPublications: Publication[] = [];
-
-const orderElement = <T extends { time: string }>(a: T, b: T) => {
-  const presentValues = ['present', 'now', 'current', 'today'];
-  if (
-    presentValues.includes(
-      (a['time'] as string)?.split(' - ')[1]?.toLowerCase(),
-    )
-  ) {
-    // If the date is 'present', it should be the first element
-    return -1;
-  }
-  const dateA = new Date((a['time'] as string)?.split(' - ')[1]);
-  const dateB = new Date((b['time'] as string)?.split(' - ')[1]);
-  return dateB.getTime() - dateA.getTime();
-};
-
-if (experiences.length > 0) {
-  orderdExperiences = experiences.sort((a, b) => {
-    return orderElement(a, b);
-  });
-}
-
-if (education.length > 0) {
-  orderdEducations = education.sort((a, b) => {
-    return orderElement(a, b);
-  });
-}
-
-if (publications.length > 0) {
-  orderedPublications = publications.sort((a, b) => {
-    return orderElement(a, b);
-  });
-}
+const sections: { title: string; entries: CvEntry[] }[] = [
+  { title: 'Education', entries: education },
+  { title: 'Experience', entries: experience },
+];
 ---
 
-<Layout>
-  {
-    orderdEducations.length > 0 && (
-      <section class='mb-12'>
-        <h2 class='text-2xl font-bold mb-6 border-b pb-2'>Education</h2>
-        <CvTimeline elements={orderdEducations} colored={true} />
-      </section>
-    )
-  }
+<Base title='CV'>
+  <div class='page-head'>
+    <h1>Curriculum Vitae</h1>
+    <a class='button' href={site.cvPdf}>Download PDF</a>
+  </div>
 
   {
-    orderdExperiences.length > 0 && (
-      <section class='mb-12'>
-        <h2 class='text-2xl font-bold mb-6 border-b pb-2'>Experiences</h2>
-        <CvTimeline elements={orderdExperiences} colored={true} />
-      </section>
-    )
+    sections.map((s) => (
+      <>
+        <h2>{s.title}</h2>
+        <ul class='dated'>
+          {s.entries.map((e) => (
+            <li class='cv-entry'>
+              <span class='date'>{e.dates}</span>
+              <div>
+                <div class='title'>{e.title}</div>
+                <div class='org'>{e.org}</div>
+                {e.details && (
+                  <ul>
+                    {e.details.map((d) => (
+                      <li>{d}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </>
+    ))
   }
 
-  {
-    orderdEducations.length > 0 && (
-      <section class='mb-12'>
-        <h2 class='text-2xl font-bold mb-6 border-b pb-2'>Last publications</h2>
-        <PublicationsList elements={orderedPublications} />
-      </section>
-    )
-  }
+  <h2>Publications</h2>
+  <ul class='pubs'>
+    {publications.map((pub) => <PublicationItem pub={pub} />)}
+  </ul>
+  <p class='footnote'>* Equal contribution.</p>
 
-  {
-    skills.length > 0 && (
-      <section class='mb-12'>
-        <List listTitle='Skills' listItems={skills} />
-      </section>
-    )
-  }
-</Layout>
+  <h2>Skills</h2>
+  <dl class='skills'>
+    {
+      skills.map((s) => (
+        <div>
+          <dt>{s.area}</dt>
+          <dd>{s.items}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</Base>

@@ -1,0 +1,40 @@
+---
+import { site, type Publication } from '@/data/site';
+
+interface Props {
+  pub: Publication;
+}
+const { pub } = Astro.props;
+
+const isMe = (a: string) => a.replace('*', '') === site.name;
+---
+
+<li class='pub'>
+  <div class='pub-title'>{pub.title}</div>
+  <div class='pub-authors'>
+    {
+      pub.authors.map((a, i) => (
+        <>
+          {isMe(a) ? <strong>{a.replace('*', '')}</strong> : a.replace('*', '')}
+          {a.endsWith('*') && <sup>*</sup>}
+          {i < pub.authors.length - 1 && ', '}
+        </>
+      ))
+    }
+  </div>
+  <div class='pub-venue'>
+    {pub.venue}, {pub.year}
+    {pub.note && <span class='pub-note'>{pub.note}</span>}
+  </div>
+  {
+    pub.links.length > 0 && (
+      <div class='pub-links'>
+        {pub.links.map((l) => (
+          <a href={l.url} target='_blank' rel='noopener'>
+            {l.label}
+          </a>
+        ))}
+      </div>
+    )
+  }
+</li>

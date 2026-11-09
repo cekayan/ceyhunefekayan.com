@@ -1,37 +1,59 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Base from '@/layouts/Base.astro';
+import PublicationItem from '@/components/PublicationItem.astro';
+import { site, links, advisor, news, publications } from '@/data/site';
+import profile from '@/assets/profile.png';
 
-import { profile } from '@/settings';
-import { publications } from '@/data/cv';
-import ProfilePictures from '@/assets/profile_pictures.png';
-import Hero from '@/components/ui/Hero.astro';
-import Grid from '@/components/ui/Grid.astro';
-import ArticleList from '@/components/ui/ArticleList.astro';
-
-const { fullName, title, institute, research_areas } = profile;
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const selected = publications.filter((p) => p.selected);
 ---
 
-<Layout>
-  <!-- Hero Section -->
-  <section class='flex items-center gap-12 border-b pb-12'>
-    <Hero
-      fullName={fullName}
-      title={title}
-      institute={institute}
-      profilePicture={ProfilePictures}
-    />
+<Base>
+  <section class='intro'>
+    <Image src={profile} alt={site.name} width={352} height={352} loading='eager' />
+    <div>
+      <h1>{site.name}</h1>
+      <div class='subtitle'>{site.role} · {site.affiliation}</div>
+      <p>
+        I am a second-year Ph.D. student in Computer Science at Drexel University, advised by
+        <a href={advisor.url}>{advisor.name}</a>. I study the <strong>mechanistic interpretability</strong>
+        of large language models: how LLMs internally represent and carry out reasoning, planning, and
+        formalization. I use activation steering, representation geometry, and circuit-level analysis to
+        identify the mechanisms behind these behaviors and to intervene on them.
+      </p>
+      <p>
+        In 2026 I was a Research Scientist Intern at IBM Silicon Valley Lab, working on applications
+        of LLM hidden states. Before my Ph.D., I received an M.S. in Machine Learning Engineering from
+        Drexel and a B.S. in Electrical and Electronics Engineering from Izmir Institute of Technology.
+      </p>
+      <div class='contact'>
+        <a href={`mailto:${links.email}`}>{links.email}</a>
+        <a href={links.scholar}>Google Scholar</a>
+        <a href={links.github}>GitHub</a>
+        <a href={links.linkedin}>LinkedIn</a>
+        <a href={links.x}>X</a>
+        <a href={site.cvPdf}>CV (PDF)</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Research Areas -->
-  <section class='py-12 border-b'>
-    <Grid gridTitle='Research Areas' gridItems={research_areas} />
-  </section>
+  <h2>News</h2>
+  <ul class='dated'>
+    {
+      news.map((n) => (
+        <li>
+          <span class='date'>{n.date}</span>
+          <span set:html={n.text} />
+        </li>
+      ))
+    }
+  </ul>
 
-  <!-- Recent Publications -->
-  <section class='py-12 border-t'>
-    <ArticleList listTitle='Publications' listItems={publications} />
-  </section>
-</Layout>
+  <h2>Selected Publications</h2>
+  <ul class='pubs'>
+    {selected.map((pub) => <PublicationItem pub={pub} />)}
+  </ul>
+  <p class='footnote'>
+    * Equal contribution. See <a href='/publications/'>all publications</a>.
+  </p>
+</Base>
