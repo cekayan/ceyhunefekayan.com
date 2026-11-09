@@ -49,7 +49,7 @@ export const news: NewsItem[] = [
 export type Publication = {
   title: string;
   authors: string[];
-  venue: string;
+  venue?: string;
   year: number;
   note?: string; // e.g. "Spotlight"
   selected?: boolean; // shown on the home page
@@ -83,6 +83,20 @@ export const publications: Publication[] = [
   },
   {
     title:
+      'GPU-Accelerated Simulated Oscillator Ising/Potts Machine Solving Combinatorial Optimization Problems',
+    authors: [
+      'Yilmaz Ege Gonul',
+      'Ceyhun Efe Kayan',
+      'Ilknur Mustafazade',
+      'Nagarajan Kandasamy',
+      'Baris Taskin',
+    ],
+    venue: 'Great Lakes Symposium on VLSI (GLSVLSI)',
+    year: 2025,
+    links: [{ label: 'DOI', url: 'https://doi.org/10.1145/3716368.3735247' }],
+  },
+  {
+    title:
       'Intensity and Phase Stacked Analysis of a Φ-OTDR System Using Deep Transfer Learning and Recurrent Neural Networks',
     authors: ['Ceyhun Efe Kayan', 'Kivilcim Yuksel Aldogan', 'Abdurrahman Gumus'],
     venue: 'Applied Optics 62(7)',
@@ -92,6 +106,21 @@ export const publications: Publication[] = [
       { label: 'Paper', url: 'https://opg.optica.org/ao/abstract.cfm?URI=ao-62-7-1753' },
       { label: 'DOI', url: 'https://doi.org/10.1364/AO.481757' },
     ],
+  },
+  {
+    title:
+      'Energy and Temperature Analysis of AI/Machine Learning Algorithms on Different Hardware Systems',
+    authors: [
+      'Vedant Karia',
+      'Murat Isik',
+      'A. Daram',
+      'Ceyhun Efe Kayan',
+      'Baris Taskin',
+      'Dhireesha Kudithipudi',
+      'Sadasivan Shankar',
+    ],
+    year: 2023,
+    links: [],
   },
   {
     title:

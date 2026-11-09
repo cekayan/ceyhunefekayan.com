@@ -23,7 +23,7 @@ const isMe = (a: string) => a.replace('*', '') === site.name;
     }
   </div>
   <div class='pub-venue'>
-    {pub.venue}, {pub.year}
+    {pub.venue ? `${pub.venue}, ${pub.year}` : pub.year}
     {pub.note && <span class='pub-note'>{pub.note}</span>}
   </div>
   {
